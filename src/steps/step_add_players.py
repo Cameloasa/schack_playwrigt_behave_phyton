@@ -1,8 +1,12 @@
-from behave import when, then
+from behave import given, when, then
+from src.pages.start_page import StartPage
+
 
 @given(u'I am on the chess game start page')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Given I am on the chess game start page')
+def step_given_start_page(context):
+    context.start_page = StartPage
+    context.start_page.navigate_to(context.base_url)
+
 
 
 @when(u'I enter "Alice" as a new player\'s name')
