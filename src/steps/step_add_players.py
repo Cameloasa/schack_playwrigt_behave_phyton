@@ -7,58 +7,25 @@ def step_given_start_page(context):
     context.start_page = StartPage
     context.start_page.navigate_to(context.base_url)
 
-
-
-@when(u'I enter "Alice" as a new player\'s name')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When I enter "Alice" as a new player\'s name')
-
+@when(u'I enter "{payer_name}" as a new player\'s name')
+def step_when_enter_player_name(context, player_name):
+    context.start_page.fill_player_name(player_name)
 
 @when(u'I click the "Lägg till spelare" button')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When I click the "Lägg till spelare" button')
+def step_click_add_player(context):
+    context.start_page.click_add_player_button()
+
+@then(u'I should see "{player_name}" in the list of players')
+def step_then_see_player_in_list(context, player_name):
+    player_list = context.start_page.get_player_list()
+    assert player_name in player_list, f"Player '{player_name}' not found in {player_list}"
+
+@then(u'the timer for "{player_name}" should be visible')
+def step_then_timer_visible(context, player_name):
+    assert context.start_page.player_timer_visible(player_name), f"Timer for '{player_name}' is not visible"
 
 
-@then(u'I should see "Alice" in the list of players')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Then I should see "Alice" in the list of players')
 
 
-@then(u'the timer for "Alice" should be visible')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Then the timer for "Alice" should be visible')
 
 
-@when(u'I enter "Bob" as a new player\'s name')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When I enter "Bob" as a new player\'s name')
-
-
-@then(u'I should see "Bob" in the list of players')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Then I should see "Bob" in the list of players')
-
-
-@then(u'the timer for "Bob" should be visible')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Then the timer for "Bob" should be visible')
-
-
-@given(u'I have added "Alice" and "Bob" as players')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Given I have added "Alice" and "Bob" as players')
-
-
-@when(u'the game starts')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When the game starts')
-
-
-@then(u'I should see timers running for both "Alice" and "Bob"')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Then I should see timers running for both "Alice" and "Bob"')
-
-
-@then(u'I should see a pause button')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Then I should see a pause button')
