@@ -1,25 +1,60 @@
 from behave import when, then
 
-@when(u'spelaren klickar på knappen "Lägg till spelare"')
+@given(u'I am on the chess game start page')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When spelaren klickar på knappen "Lägg till spelare"')
+    raise NotImplementedError(u'STEP: Given I am on the chess game start page')
 
 
-@when(u'spelaren skriver "David" i textfältet')
+@when(u'I enter "Alice" as a new player\'s name')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When spelaren skriver "David" i textfältet')
+    raise NotImplementedError(u'STEP: When I enter "Alice" as a new player\'s name')
 
 
-@then(u'"David" dyker upp på sidan med texten "0:00.0"')
+@when(u'I click the "Lägg till spelare" button')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then "David" dyker upp på sidan med texten "0:00.0"')
+    raise NotImplementedError(u'STEP: When I click the "Lägg till spelare" button')
 
 
-@when(u'spelaren skriver "Gerson" i textfältet')
+@then(u'I should see "Alice" in the list of players')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When spelaren skriver "Gerson" i textfältet')
+    raise NotImplementedError(u'STEP: Then I should see "Alice" in the list of players')
 
 
-@then(u'"Gerson" dyker upp på sidan med texten "0:00.0"')
+@then(u'the timer for "Alice" should be visible')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then "Gerson" dyker upp på sidan med texten "0:00.0"')
+    raise NotImplementedError(u'STEP: Then the timer for "Alice" should be visible')
+
+
+@when(u'I enter "Bob" as a new player\'s name')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When I enter "Bob" as a new player\'s name')
+
+
+@then(u'I should see "Bob" in the list of players')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then I should see "Bob" in the list of players')
+
+
+@then(u'the timer for "Bob" should be visible')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then the timer for "Bob" should be visible')
+
+
+@given(u'I have added "Alice" and "Bob" as players')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Given I have added "Alice" and "Bob" as players')
+
+
+@when(u'the game starts')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When the game starts')
+
+
+@then(u'I should see timers running for both "Alice" and "Bob"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then I should see timers running for both "Alice" and "Bob"')
+
+
+@then(u'I should see a pause button')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then I should see a pause button')
