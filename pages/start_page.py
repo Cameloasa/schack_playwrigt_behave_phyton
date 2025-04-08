@@ -24,11 +24,5 @@ class StartPage:
         locator = self.page.locator(".player").get_by_text(re.compile(player_name + r"\s+0:00.0"))
         return locator.is_visible()
 
-    def get_player_list(self):
-        """Returns the list of added player names."""
-        # Folosim un locator mai specific pentru jucători
-        elements = self.page.locator(".player").all()
-        return [el.inner_text().split()[0] for el in elements if el.inner_text()]
-
     def is_pause_button_visible(self):
-        return self.page.is_visible("text=Pause")
+        return self.page.is_visible("text=Pausa")
