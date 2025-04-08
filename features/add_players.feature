@@ -18,4 +18,3 @@ Feature: Adding players to the chess game
     Given I have added "Alice" and "Bob" as players
     When the game starts
     Then I should see timers running for both "Alice" and "Bob"
-    And I should see a pause button

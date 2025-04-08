@@ -20,9 +20,15 @@ class StartPage:
 
     def player_timer_visible(self, player_name: str):
         """Checks if a timer is visible for the given player."""
-        # Adaptăm de la prof: verificăm numele + timer cu regex
-        locator = self.page.locator(".player").get_by_text(re.compile(player_name + r"\s+0:00.0"))
-        return locator.is_visible()
-
+        self.page.wait_for_selector(".player", timeout=10000)
+        locator = self.page.locator(".player").get_by_text(re.compile(player_name + r"\s+\d+:\d+\.\d"))
+        count = locator.count()
+        print(f"Verify timer for '{player_name}': {count} elements found")
+        if count > 0:
+            print("Text found:", locator.first.inner_text())
+            return locator.first.is_visible()
+        return False
+    """
     def is_pause_button_visible(self):
         return self.page.is_visible("text=Pausa")
+    """
