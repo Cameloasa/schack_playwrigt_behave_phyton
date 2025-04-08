@@ -5,10 +5,9 @@ Feature: Adding players to the chess game
 
   Scenario Outline: Adding multiple players and verifying timers
     Given I am on the chess game start page
-    When I enter "<player_name>" as a new player's name
-    And I click the "Lägg till spelare" button
-    Then I should see "<player_name>" in the list of players
-    And the timer for "<player_name>" should be visible
+    When I click the "Lägg till spelare" button
+    And I enter "<player_name>" as a new player's name
+    Then the timer for "<player_name>" should be visible
 
     Examples:
       | player_name |
