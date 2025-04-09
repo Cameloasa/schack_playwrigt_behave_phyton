@@ -10,11 +10,11 @@ def before_scenario(context, scenario):
     print("before_scenario rulat")
     context.page = context.browser.new_page()
     context.base_url = "https://forverkliga.se/JavaScript/whose-turn/"
-    print("base_url setat:", context.base_url)  # Mutat după setare
+    print("base_url setat:", context.base_url)
 
 def after_scenario(context, scenario):
     print("after_scenario rulat")
-    if hasattr(context, 'page') and context.page:  # Verificăm dacă page există
+    if hasattr(context, 'page') and context.page:
         context.page.close()
 
 def after_all(context):
